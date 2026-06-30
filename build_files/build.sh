@@ -8,7 +8,8 @@ cp -avf "/ctx/system_files"/. /
 ### Install packages
 
 # this installs a package from fedora repos
-dnf5 -y config-manager addrepo --from-repofile https://download.docker.com/linux/fedora/docker-ce.repo
+dnf5 -y install 'dnf-command(config-manager)'
+dnf5 config-manager addrepo --from-repofile https://download.docker.com/linux/fedora/docker-ce.repo
 dnf5 config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
 dnf5 config-manager setopt tailscale-stable.enabled=0
 dnf5 -y install --enablerepo='tailscale-stable' tailscale
