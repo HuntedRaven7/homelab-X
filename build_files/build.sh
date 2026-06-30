@@ -8,6 +8,7 @@ cp -avf "/ctx/system_files"/. /
 ### Install packages
 
 dnf -y install dnf-plugins-core
+dnf5 -y install 'dnf5-command(config-manager)'
 dnf config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
 dnf config-manager setopt tailscale-stable.enabled=0
 dnf -y install --enablerepo='tailscale-stable' tailscale
