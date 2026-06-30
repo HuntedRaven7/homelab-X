@@ -34,4 +34,5 @@ dnf -y install --enablerepo=docker-ce-stable \
 #### Example for enabling a System Unit File
 
 systemctl enable docker
+systemctl enable sshd
 systemctl enable tailscaled
