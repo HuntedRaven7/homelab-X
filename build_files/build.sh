@@ -12,7 +12,7 @@ dnf config-manager addrepo --from-repofile https://download.docker.com/linux/fed
 dnf config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
 dnf config-manager setopt tailscale-stable.enabled=0
 dnf -y install --enablerepo='tailscale-stable' tailscale
-dnf5 install -y tmux docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+dnf install -y tmux docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # Use a COPR Example:
 
