@@ -8,12 +8,12 @@ cp -avf "/ctx/system_files"/. /
 ### Install packages
 
 # this installs a package from fedora repos
-dnf -y install 'dnf-command(config-manager)'
-dnf config-manager addrepo --from-repofile https://download.docker.com/linux/fedora/docker-ce.repo
-dnf config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
-dnf config-manager setopt tailscale-stable.enabled=0
-dnf -y install --enablerepo='tailscale-stable' tailscale
-dnf install -y tmux docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+dnf5 -y install dnf-plugins-core
+dnf5 config-manager addrepo --from-repofile https://download.docker.com/linux/fedora/docker-ce.repo
+dnf5 config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+dnf5 config-manager setopt tailscale-stable.enabled=0
+dnf5 -y install --enablerepo='tailscale-stable' tailscale
+dnf5 install -y tmux docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # Use a COPR Example:
 
